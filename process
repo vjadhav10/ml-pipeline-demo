@@ -1,0 +1,229 @@
+🔷 3. Problem Statement
+
+To build a machine learning model that predicts weather conditions such as temperature or rainfall based on input parameters like humidity, pressure, and wind speed, and deploy it using MLOps practices.
+
+🔷 4. Tools & Technologies
+Python
+Git
+DVC
+MLflow
+FastAPI
+Docker
+GitHub Actions / Jenkins
+Microsoft Azure Machine Learning / Google Vertex AI
+🔷 5. Theory
+
+MLOps (Machine Learning Operations) is a practice that combines machine learning, DevOps, and data engineering to automate and manage the ML lifecycle.
+
+In weather prediction:
+
+Historical weather data is used
+Models learn patterns
+Pipeline ensures continuous improvement
+
+MLOps provides:
+
+Automation
+Reproducibility
+Scalability
+Continuous monitoring
+\
+🔷 DETAILED PIPELINE (STEP-BY-STEP EXPLANATION)
+🔶 1. Problem Definition
+
+This is the starting point of the pipeline.
+
+✔ What is done:
+Define objective:
+Predict temperature (Regression)
+Predict rainfall (Classification)
+✔ Example:
+Input: temperature, humidity, wind speed
+Output: rain (Yes/No)
+✔ Importance:
+Determines:
+Model type
+Evaluation metrics
+Data requirements
+
+👉 Without clear definition, pipeline fails.
+
+🔶 2. Data Collection
+✔ Sources:
+Weather APIs
+Historical datasets
+Meteorological stations
+✔ Features collected:
+Temperature
+Humidity
+Pressure
+Wind speed
+✔ Importance:
+High-quality data → high accuracy
+More data → better generalization
+🔶 3. Data Versioning
+✔ Tools:
+Git → for code
+DVC → for datasets
+✔ What happens:
+Track dataset changes
+Store dataset versions
+Maintain history
+✔ Importance:
+Reproducibility
+Rollback capability
+Consistency
+🔶 4. Data Preprocessing
+
+Raw weather data is noisy and incomplete.
+
+✔ Steps:
+Handle missing values (mean/median)
+Remove duplicates
+Normalize/scale data
+Feature engineering
+✔ Example:
+Convert date → day, month
+Create new features like average humidity
+✔ Importance:
+Clean data improves model performance
+🔶 5. Model Training
+✔ Algorithms:
+Linear Regression → temperature
+Random Forest → rainfall
+✔ Process:
+Split dataset:
+80% training
+20% testing
+Train model on training data
+✔ Output:
+Trained model
+
+👉 Model learns patterns from data
+
+🔶 6. Experiment Tracking
+✔ Tool:
+MLflow
+✔ Tracks:
+Hyperparameters
+Accuracy / RMSE
+Model files
+✔ Importance:
+Compare multiple models
+Select best model
+Maintain experiment history
+🔶 7. Model Evaluation
+✔ Metrics:
+Accuracy (classification)
+RMSE (regression)
+Precision & Recall
+✔ Purpose:
+Check model performance
+Avoid overfitting
+
+👉 Only best model proceeds
+
+🔶 8. Model Registry
+✔ What happens:
+Store model in MLflow registry
+Maintain versions:
+v1, v2, v3
+✔ Features:
+Stage transitions (staging → production)
+Rollback support
+
+👉 Ensures controlled deployment
+
+🔶 9. API Development
+✔ Tool:
+FastAPI
+✔ What happens:
+Convert model into REST API
+✔ Example:
+Input: humidity=80, temp=30
+Output: Rain = Yes
+✔ Importance:
+Makes model usable by applications
+🔶 10. Containerization
+✔ Tool:
+Docker
+✔ What is done:
+Package:
+Model
+API
+Dependencies
+✔ Benefits:
+Same environment everywhere
+Easy deployment
+
+👉 Solves compatibility issues
+
+🔶 11. CI/CD Pipeline
+✔ Tools:
+GitHub Actions
+Jenkins
+✔ CI (Continuous Integration):
+Test code automatically
+✔ CD (Continuous Deployment):
+Deploy model automatically
+✔ Importance:
+Reduces manual work
+Faster updates
+🔶 12. Deployment
+✔ Platforms:
+Microsoft Azure Machine Learning
+Google Vertex AI
+✔ Output:
+Live API endpoint
+
+👉 Users can access predictions online
+
+🔶 13. Monitoring
+✔ What is tracked:
+Model accuracy
+Prediction errors
+Data drift
+✔ Example:
+
+Weather patterns change → model accuracy drops
+
+👉 Detect problems early
+
+🔶 14. Retraining
+✔ When:
+Accuracy decreases
+New data available
+✔ What is done:
+Retrain model
+Update version
+
+👉 Ensures continuous improvement
+
+🔷 FINAL PIPELINE FLOW (DRAW IN EXAM)
+Problem Definition
+        ↓
+Data Collection
+        ↓
+Data Versioning (Git + DVC)
+        ↓
+Data Preprocessing
+        ↓
+Model Training
+        ↓
+Experiment Tracking (MLflow)
+        ↓
+Model Evaluation
+        ↓
+Model Registry
+        ↓
+API Development (FastAPI)
+        ↓
+Containerization (Docker)
+        ↓
+CI/CD Pipeline
+        ↓
+Cloud Deployment
+        ↓
+Monitoring
+        ↓
+Retraining
