@@ -227,3 +227,13 @@ Cloud Deployment
 Monitoring
         ↓
 Retraining
+
+Retraining in MLOps is the process of updating the machine learning model using new data to improve its performance. 
+In a weather prediction system, retraining is required when model accuracy decreases due to changing weather patterns
+or data drift. New real-time weather data (temperature, humidity, rainfall) is added to the dataset, and the model is trained again.
+The updated model is then validated and redeployed. This ensures the model remains accurate and adapts to changing conditions.
+
+
+In conclusion, monitoring, maintenance, and retraining are essential components of an MLOps pipeline, ensuring that the weather
+prediction model remains accurate, reliable, and adaptable to changing environmental conditions.
+Continuous tracking of performance, updating with new data, and redeployment of improved models enable the system to provide consistent and timely forecasts.
